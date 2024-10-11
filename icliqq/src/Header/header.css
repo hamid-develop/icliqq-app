@@ -1,0 +1,28 @@
+header {
+  background-color: #0f8a6b;
+  padding: 1rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+}
+
+.menu li a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}

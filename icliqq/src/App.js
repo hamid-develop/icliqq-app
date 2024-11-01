@@ -8,6 +8,7 @@ import Partners from "./components/Partners/Partners";
 import Gallery from "./components/Gallery/Gallery";
 import About from "./components/About-us/About";
 
+
 function App() {
   return (
     <Router>

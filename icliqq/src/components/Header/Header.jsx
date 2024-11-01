@@ -1,34 +1,77 @@
+import { useState } from "react";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./header.css";
+import logo from "./logo.png";
 
 const Header = () => {
+  const [expanded, setExpanded] = useState(false);
   return (
-    <div className="container">
-      <div className="row">
-        <section className="col-12">
-          <nav className="nav justify-content-center flex-column flex-sm-row ">
-            <Link className="nav-item nav-link" to="/home">
+    <Navbar
+      expanded={expanded}
+      expand="lg"
+      style={{ backgroundColor: "#119c85" }}
+    >
+      <Container fluid>
+        <Navbar.Brand>
+          <img src={logo} alt="logo" width={130} height={80} />
+        </Navbar.Brand>
+        <Navbar.Toggle
+        
+          aria-controls="navbarScroll"
+          onClick={() => setExpanded(expanded ? false : "expanded")}
+        />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="mx-auto my-2 my-lg-0 "
+            navbarScroll
+          >
+            <Link
+              to="/home"
+              className="nav-link under"
+              onClick={() => setExpanded(false)}
+            >
               Home
             </Link>
-            <Link className="nav-item nav-link" to="/features">
+            <Link
+              to="/features"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
               Features
             </Link>
-            <Link className="nav-item nav-link" to="/downloads">
+            <Link
+              to="/downloads"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
               Downloads
             </Link>
-            <Link className="nav-item nav-link" to="/partners">
+            <Link
+              to="/partners"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
               Business Partners
             </Link>
-            <Link className="nav-item nav-link" to="/gallery">
+            <Link
+              to="/gallery"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
               Gallery
             </Link>
-            <Link className="nav-item nav-link" to="/about-us">
+            <Link
+              to="/about-us"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
               About-us
             </Link>
-          </nav>
-        </section>
-      </div>
-    </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
